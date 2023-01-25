@@ -12,7 +12,13 @@ import (
 )
 
 func status(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, responses.Response{Status: http.StatusOK, Msg: "Hello", Data: map[string]interface{}{"data": "no data"}})
+	c.IndentedJSON(
+		http.StatusOK,
+		responses.Response{
+			Status: http.StatusOK,
+			Msg:    "Hello",
+			Data:   map[string]interface{}{"data": "World"},
+		})
 }
 
 func main() {

@@ -1,10 +1,12 @@
 package models
 
+import "go.mongodb.org/mongo-driver/bson/primitive"
+
 type Character struct {
-	ID        string `json:"id,omitempty"`
-	Name      string `json:"name" validate:"required"`
-	Birthday  string `json:"birthday,omitempty"`
-	Dead      bool   `json:"dead" validate:"required"`
-	Relevance string `json:"relevance" validate:"required"`
-	Seasons   int    `json:"seasons" validate:"required"`
+	ID        primitive.ObjectID `json:"_id,omitempty" bson:"_id,omitempty"`
+	Name      string             `json:"name" validate:"required"`
+	Birthday  string             `json:"birthday,omitempty"`
+	Dead      bool               `json:"dead" validate:"required"`
+	Relevance string             `json:"relevance" validate:"required"`
+	Seasons   int                `json:"seasons" validate:"required"`
 }
